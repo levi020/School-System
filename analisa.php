@@ -1,7 +1,13 @@
 <?php
 
 session_start();
-include "conn.php";
+$hostname = "localhost";
+$user= "root";
+$pass = "";
+$db = "escola";
+
+$conn = new mysqli($hostname, $user, $pass, $db);
+
 if($conn->connect_error){
     echo "server morreu".$conn->connect_errno;
 }else{

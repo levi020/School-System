@@ -62,7 +62,7 @@
 
                 if($result->num_rows == 0){
                     // Caso 0 linhas, criar formulário completo com 3 inputs por matéria
-                    echo "<form action='teste\analisa.php' method='POST'>
+                    echo "<form action='analisa.php' method='POST'>
                         <table>
                             <thead>
                                 <tr>
@@ -116,7 +116,7 @@
                 elseif($result->num_rows == 1){
                     // Caso 1 linha, mostrar a nota e criar 2 inputs para cada matéria
                     $row = $result->fetch_assoc();
-                    echo "<form action='teste\analisa.php' method='POST'>
+                    echo "<form action='analisa.php' method='POST'>
                         <table>
                             <thead>
                                 <tr>
@@ -169,7 +169,7 @@
                 }
                 elseif($result->num_rows == 2){
                     // Caso 2 linhas, mostrar as anteriores e criar inputs para as faltantes
-                    echo "<form action='teste\analisa.php' method='POST'>
+                    echo "<form action='analisa.php' method='POST'>
                         <table>
                             <thead>
                                 <tr>

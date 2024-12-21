@@ -160,7 +160,7 @@
                             </tbody>
                         </table>
                         <div style='text-align: center;'>
-                            <input type='hidden' name='idAluno' id='idAluno' value='".$idAluno."'>
+                            <input type='hidden' name='idAluno' id='idAluno' value='".$idaluno."'>
                             <input type='hidden' name='tri' id='tri' value='".$tri."'>
                             <input type='hidden' name='turma' id='turma' value='".$turma."'>
                             <button type='submit'>Salvar Notas</button>
@@ -211,7 +211,7 @@
                     echo "</tbody>
                         </table>
                         <div style='text-align: center;'>
-                            <input type='hidden' name='idAluno' id='idAluno' value='".$idAluno."'>
+                            <input type='hidden' name='idAluno' id='idAluno' value='".$idaluno."'>
                             <input type='hidden' name='tri' id='tri' value='".$tri."'>
                             <input type='hidden' name='turma' id='turma' value='".$turma."'>
                             <button type='submit'>Salvar Notas</button>

@@ -18,13 +18,14 @@ if($conn->connect_error){
 }else{
     if (!empty($_POST["tri"]) && !empty($_POST["turma"]) && !empty($_POST["idAluno"])){
         //analise de dados
-        $sql1 = $conn->prepare("INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $sql2 = $conn->prepare("INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $sql3 = $conn->prepare("INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $sql1 = "INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES 
+        (".$_POST["idAluno"].", ".$_POST["turma"].", ".$_POST["p1"].", ".$_POST["m1"].", ".$_POST["ch1"].", ".$_POST["ce1"].", ".$_POST["ef1"].", ".$_POST["tri"].")";
 
-        $sql1->bind_param("????????", $_POST["idAluno"], $_POST["turma"], $_POST["p1"], $_POST["m1"], $_POST["ch1"], $_POST["ce1"], $_POST["ef1"], $_POST["tri"]);
-        $sql2->bind_param("????????", $_POST["idAluno"], $_POST["turma"], $_POST["p2"], $_POST["m2"], $_POST["ch2"], $_POST["ce2"], $_POST["ef2"], $_POST["tri"]);
-        $sql3->bind_param("????????", $_POST["idAluno"], $_POST["turma"], $_POST["p3"], $_POST["m3"], $_POST["ch3"], $_POST["ce3"], $_POST["ef3"], $_POST["tri"]);
+        $sql2 = "INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES 
+        (".$_POST["idAluno"].", ".$_POST["turma"].", ".$_POST["p2"].", ".$_POST["m2"].", ".$_POST["ch2"].", ".$_POST["ce2"].", ".$_POST["ef2"].", ".$_POST["tri"].")";
+
+        $sql3 = "INSERT INTO `notas`(`aluno_id`, `turma`, `portugues`, `matematica`, `ciencias_humanas`, `ciencias_exatas`, `educacao_fisica`, `trimestre`) VALUES 
+        (".$_POST["idAluno"].", ".$_POST["turma"].", ".$_POST["p3"].", ".$_POST["m3"].", ".$_POST["ch3"].", ".$_POST["ce3"].", ".$_POST["ef3"].", ".$_POST["tri"].")";
 
         if(!empty($_POST["p1"]) && !empty($_POST["m1"]) && !empty($_POST["ch1"]) && !empty($_POST["ce1"]) && !empty($_POST["ef1"])){
 
@@ -32,14 +33,9 @@ if($conn->connect_error){
                 if(!empty($_POST["p3"]) && !empty($_POST["m3"]) && !empty($_POST["ch3"]) && !empty($_POST["ce3"]) && !empty($_POST["ef3"])){
                     //todos os campos
                     try{
-                        
-                        $sql1->execute();
-                        $sql2->execute();
-                        $sql3->execute();
-
-                        $result1 = $sql1->get_result();
-                        $result2 = $sql2->get_result();
-                        $result3 = $sql3->get_result();
+                        $result1 = $conn->query($sql1);
+                        $result2 = $conn->query($sql2);
+                        $result3 = $conn->query($sql3);
 
                         if($result1 == true && $result2 == true && $result3 == true){
                             echo "<script>
@@ -61,11 +57,9 @@ if($conn->connect_error){
                     
                 }else{
                     //apenas 1 e 2
-                    $sql1->execute();
-                    $sql2->execute();
+                    $result1 = $conn->query($sql1);
+                    $result2 = $conn->query($sql2);
 
-                    $result1 = $sql1->get_result();
-                    $result2 = $sql2->get_result();
                     if($result1 == true && $result2 == true){
                         echo "<script>
                             alert('notas adicionadas com sucesso');
@@ -81,11 +75,8 @@ if($conn->connect_error){
             }else{
                 if(!empty($_POST["p3"]) && !empty($_POST["m3"]) && !empty($_POST["ch3"]) && !empty($_POST["ce3"]) && !empty($_POST["ef3"])){
                     //1 e 3
-                    $sql1->execute();
-                    $sql2->execute();
-
-                    $result1 = $sql1->get_result();
-                    $result2 = $sql2->get_result();
+                    $result1 = $conn->query($sql1);
+                    $result3 = $conn->query($sql3);
                     if($result1 == true && $result2 == true){
                         echo "<script>
                             alert('notas adicionadas com sucesso');
@@ -99,9 +90,7 @@ if($conn->connect_error){
                     }
                 }else{
                     //apenas campo 1
-                    $sql1->execute();
-
-                    $result1 = $sql1->get_result();
+                    $result1 = $conn->query($sql1);
 
                     if($result1 == true){
                         echo "<script>
@@ -119,12 +108,8 @@ if($conn->connect_error){
         }elseif(!empty($_POST["p2"]) && !empty($_POST["m2"]) && !empty($_POST["ch2"]) && !empty($_POST["ce2"]) && !empty($_POST["ef2"])){
             if(!empty($_POST["p3"]) && !empty($_POST["m3"]) && !empty($_POST["ch3"]) && !empty($_POST["ce3"]) && !empty($_POST["ef3"])){
                 //campo 2 e 3
-                $sql2->execute();
-                $sql3->execute();
-
-                $result2 = $sql1->get_result();
-                $result3 = $sql1->get_result();
-
+                $result2 = $conn->query($sql3);
+                $result3 = $conn->query($sql3);
                 if($result2 == true && $result3 == true){
                     echo "<script>
                         alert('notas adicionadas com sucesso');
@@ -138,9 +123,7 @@ if($conn->connect_error){
                 }
             }else{
                 //campo 2 apenas
-                $sql2->execute();
-
-                $result2 = $sql1->get_result();
+                $result2 = $conn->query($sql2);
 
                 if($result2 == true){
                     echo "<script>
@@ -156,9 +139,7 @@ if($conn->connect_error){
             }   
         }elseif(!empty($_POST["p3"]) && !empty($_POST["m3"]) && !empty($_POST["ch3"]) && !empty($_POST["ce3"]) && !empty($_POST["ef3"])){
             //apenas campo 3";
-            $sql3->execute();
-
-                $result3 = $sql1->get_result();
+            $result3 = $conn->query($sql3);
 
                 if($result3 == true){
                     echo "<script>

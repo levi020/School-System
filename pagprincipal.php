@@ -60,7 +60,7 @@
         <p id="p1"><a href="notas.php">Notas</a></p>
         <p style="text-align:center;"><a href="turmas.php">Ver suas Turmas</a></p>
         <p id="p2"><a href="sair.php">Desconectar</a></p>
-
+        <form action="pagprincipal.php"></form>
     </div>
     <div>
         <h3>Adicionar algo ao diário</h3>
@@ -75,19 +75,21 @@
             <br>
             <input type="submit" value="Adicionar" >
         </form>
+        <form action=""></form>
     </div>
     <div class="observacoes">
         <?php
             if($conn->connect_error){
                 echo "server morreu".$conn->connect_errno;
             }else{
-                $sql = "SELECT `turma`, `data`, `anotacoes` FROM `diario` WHERE `numFuncionario`='".$_SESSION["user"]."' ORDER BY `data` DESC ;";
+                $sql = "SELECT `turma`, `data`, `anotacoes`,`id` FROM `diario` WHERE `numFuncionario`='".$_SESSION["user"]."' AND `visivel`='s' ORDER BY `data` DESC ;";
                 $query = $conn->query($sql);
                 try{
                     while($row = mysqli_fetch_array($query)){
                         echo "<div>
                         <h4>Nota do dia: $row[1], sobre a turma: $row[0]</h4>
                         <p>&emsp;$row[2]</p>
+
                         <hr>
                         </div>";
                     }

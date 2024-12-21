@@ -10,8 +10,8 @@ if($conn->connect_error){
     $turma = $conn->real_escape_string($_POST["turma"]);
     $notas = $conn->real_escape_string($_POST["notas"]);
 
-    $sql = "INSERT INTO `diario`(`turma`, `data`, `anotacoes`, `cargo`, `numFuncionario`) VALUES
-    ('".$turma."','".$date."','".$notas."','".$_SESSION["cargo"]."','".$_SESSION["user"]."')";
+    $sql = "INSERT INTO `diario`(`turma`, `data`, `anotacoes`, `cargo`, `numFuncionario`,`visivel`) VALUES
+    ('".$turma."','".$date."','".$notas."','".$_SESSION["cargo"]."','".$_SESSION["user"]."','s')";
     $query = $conn->query($sql);
     if($query == true){
         header("location: pagprincipal.php", true, 301);

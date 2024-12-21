@@ -31,12 +31,12 @@ if($conn -> connect_error){
             }else if($_SESSION["cargo"] == "Secretario(a)"){
                 echo "<script>
                     alert('login bem-sucedido');
-                    window.location.href = 'pagSecretario.php';
+                    window.location.href = 'secretario\pagSecretario.php';
                 </script>";
             }else{
                 echo "<script>
                     alert('login bem-sucedido');
-                    window.location.href = 'pagDiretor.php';
+                    window.location.href = 'Diretor\pagDiretor.php';
                 </script>";
             }
             

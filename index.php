@@ -48,7 +48,7 @@
             <br>
             <label for="senha">Insira sua senha</label>
             <br>
-            <input type="text" name="senha" id="senha" required>
+            <input type="Password" name="senha" id="senha" required>
             <br>
             <input type="submit" value="Conectar">
         </form>

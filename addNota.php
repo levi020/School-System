@@ -75,33 +75,33 @@
                             <tbody>
                                 <tr>
                                     <td>Português</td>
-                                    <td><input type='text' id='p1' name='p1' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='p2' name='p2' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='p3' name='p3' placeholder='Insira a nota'></td>
+                                    <td><input type='number' id='p1' name='p1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='p2' name='p2' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='p3' name='p3' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Matemática</td>
-                                    <td><input type='text' id='m1' name='m1' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='m2' name='m2' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='m3' name='m3' placeholder='Insira a nota'></td>
+                                    <td><input type='number' id='m1' name='m1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='m2' name='m2' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='m3' name='m3' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Ciências Humanas</td>
-                                    <td><input type='text' id='ch1' name='ch1' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ch2' name='ch2' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ch3' name='ch3' placeholder='Insira a nota'></td>
+                                    <td><input type='number' id='ch1' name='ch1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ch2' name='ch2' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ch3' name='ch3' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Ciências Exatas</td>
-                                    <td><input type='text' id='ce1' name='ce1' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ce2' name='ce2' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ce3' name='ce3' placeholder='Insira a nota'></td>
+                                    <td><input type='number' id='ce1' name='ce1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ce2' name='ce2' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ce3' name='ce3' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Educação Física</td>
-                                    <td><input type='text' id='ef1' name='ef1' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ef2' name='ef2' placeholder='Insira a nota'></td>
-                                    <td><input type='text' id='ef3' name='ef3' placeholder='Insira a nota'></td>
+                                    <td><input type='number' id='ef1' name='ef1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ef2' name='ef2' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ef3' name='ef3' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -130,32 +130,32 @@
                                 <tr>
                                     <td>Português</td>
                                     <td>".$row['portugues']."</td>
-                                    <td><input type='text' id='p1' name='p1' placeholder='Nova Nota 1'></td>
-                                    <td><input type='text' id='p2' name='p2' placeholder='Nova Nota 2'></td>
+                                    <td><input type='number' id='p1' name='p1' placeholder='Nova Nota 1' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='p2' name='p2' placeholder='Nova Nota 2' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Matemática</td>
                                     <td>".$row['matematica']."</td>
-                                    <td><input type='text' id='m1' name='m1' placeholder='Nova Nota 1'></td>
-                                    <td><input type='text' id='m2' name='m2' placeholder='Nova Nota 2'></td>
+                                    <td><input type='number' id='m1' name='m1' placeholder='Nova Nota 1' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='m2' name='m2' placeholder='Nova Nota 2' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Ciências Humanas</td>
                                     <td>".$row['ciencias_humanas']."</td>
-                                    <td><input type='text' id='ch1' name='ch1' placeholder='Nova Nota 1'></td>
-                                    <td><input type='text' id='ch2' name='ch2' placeholder='Nova Nota 2'></td>
+                                    <td><input type='number' id='ch1' name='ch1' placeholder='Nova Nota 1' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ch2' name='ch2' placeholder='Nova Nota 2' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Ciências Exatas</td>
                                     <td>".$row['ciencias_exatas']."</td>
-                                    <td><input type='text' id='ce1' name='ce1' placeholder='Nova Nota 1'></td>
-                                    <td><input type='text' id='ce2' name='ce2' placeholder='Nova Nota 2'></td>
+                                    <td><input type='number' id='ce1' name='ce1' placeholder='Nova Nota 1' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ce2' name='ce2' placeholder='Nova Nota 2' step='0.10' min='0' max='10'></td>
                                 </tr>
                                 <tr>
                                     <td>Educação Física</td>
                                     <td>".$row['educacao_fisica']."</td>
-                                    <td><input type='text' id='ef1' name='ef1' placeholder='Nova Nota 1'></td>
-                                    <td><input type='text' id='ef2' name='ef2' placeholder='Nova Nota 2'></td>
+                                    <td><input type='number' id='ef1' name='ef1' placeholder='Nova Nota 1' step='0.10' min='0' max='10'></td>
+                                    <td><input type='number' id='ef2' name='ef2' placeholder='Nova Nota 2' step='0.10' min='0' max='10'></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -184,27 +184,27 @@
                         echo "<tr>
                             <td>Português</td>
                             <td>".$row['portugues']."</td>
-                            <td><input type='text' id='p1' name='p1' placeholder='Insira a nota'></td>
+                            <td><input type='number' id='p1' name='p1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                         </tr>
                         <tr>
                             <td>Matemática</td>
                             <td>".$row['matematica']."</td>
-                            <td><input type='text' id='m1' name='m1' placeholder='Insira a nota'></td>
+                            <td><input type='number' id='m1' name='m1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                         </tr>
                         <tr>
                             <td>Ciências Humanas</td>
                             <td>".$row['ciencias_humanas']."</td>
-                            <td><input type='text' id='ch1' name='ch1' placeholder='Insira a nota'></td>
+                            <td><input type='number' id='ch1' name='ch1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                         </tr>
                         <tr>
                             <td>Ciências Exatas</td>
                             <td>".$row['ciencias_exatas']."</td>
-                            <td><input type='text' id='ce1' name='ce1' placeholder='Insira a nota'></td>
+                            <td><input type='number' id='ce1' name='ce1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                         </tr>
                         <tr>
                             <td>Educação Física</td>
                             <td>".$row['educacao_fisica']."</td>
-                            <td><input type='text' id='ef1' name='ef1' placeholder='Insira a nota'></td>
+                            <td><input type='number' id='ef1' name='ef1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
                         </tr>";
                     }
 
@@ -271,5 +271,10 @@
             $conn->close();
         ?>
     </div>
+    <script>
+        document.getElementsByTagName("input").addEventListener("change", function(){
+        this.value = parseFloat(this.value).toFixed(2);
+        });
+    </script>
 </body>
 </html>

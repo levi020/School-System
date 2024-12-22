@@ -75,7 +75,7 @@
             <br>
             <input type="submit" value="Adicionar" >
         </form>
-        <form action=""></form>
+        
     </div>
     <div class="observacoes">
         <?php
@@ -89,7 +89,10 @@
                         echo "<div>
                         <h4>Nota do dia: $row[1], sobre a turma: $row[0]</h4>
                         <p>&emsp;$row[2]</p>
-
+                        <form action='pagprincipal.php' method='post'>
+                            <input type='hidden' name='id' id='id' value='$row[3]'>
+                            <input type='submit' value='Excluir'>
+                        </form>
                         <hr>
                         </div>";
                     }
@@ -152,5 +155,14 @@
         }
     Preencher(); 
     </script>
+    <?php
+        if(isset($_POST["id"])){
+            $id = $conn->real_escape_string($_POST["id"]);
+            $sql = "UPDATE `diario` SET `visivel`='n' WHERE `id`='".$id."'";
+            $query = $conn->query($sql);
+            sleep(1);
+        }
+        $conn->close();
+    ?>
 </body>
 </html>

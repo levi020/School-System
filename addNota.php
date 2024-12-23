@@ -206,7 +206,8 @@
                             <td>Educação Física</td>
                             <td>".$row['educacao_fisica']."</td>
                             <td><input type='number' id='ef1' name='ef1' placeholder='Insira a nota' step='0.10' min='0' max='10'></td>
-                        </tr>";
+                        </tr>
+                        ";
                     }
 
                     echo "</tbody>
@@ -220,49 +221,37 @@
                     </form>";
 
                 }elseif($result->num_rows == 3){
-                    // Caso 3 linhas, mostrar todas as notas em tabela
-                    echo "<table>
-                            <thead>
-                                <tr>
-                                    <th>Disciplina</th>
-                                    <th>1ª Nota</th>
-                                    <th>2ª Nota</th>
-                                    <th>3ª Nota</th>
-                                </tr>
-                            </thead>
-                            <tbody>";
-
+                    // Caso 3 linhas, capturar as notas em um array
+                    $notas = [];
                     while($row = $result->fetch_assoc()){
-                        echo "<tr>
-                                <td>Português</td>
-                                <td>".$row['portugues']."</td>
-                                <td>".$row['portugues']."</td>
-                                <td>".$row['portugues']."</td>
-                            </tr>
-                            <tr>
-                                <td>Matemática</td>
-                                <td>".$row['matematica']."</td>
-                                <td>".$row['matematica']."</td>
-                                <td>".$row['matematica']."</td>
-                            </tr>
-                            <tr>
-                                <td>Ciências Humanas</td>
-                                <td>".$row['ciencias_humanas']."</td>
-                                <td>".$row['ciencias_humanas']."</td>
-                                <td>".$row['ciencias_humanas']."</td>
-                            </tr>
-                            <tr>
-                                <td>Ciências Exatas</td>
-                                <td>".$row['ciencias_exatas']."</td>
-                                <td>".$row['ciencias_exatas']."</td>
-                                <td>".$row['ciencias_exatas']."</td>
-                            </tr>
-                            <tr>
-                                <td>Educação Física</td>
-                                <td>".$row['educacao_fisica']."</td>
-                                <td>".$row['educacao_fisica']."</td>
-                                <td>".$row['educacao_fisica']."</td>
-                            </tr>";
+                        $notas[] = $row;
+                    }
+                
+                    // Garantir que temos dados suficientes antes de renderizar
+                    if (count($notas) === 3) {
+                        echo "<table>
+                                <thead>
+                                    <tr>
+                                        <th>Disciplina</th>
+                                        <th>1ª Nota</th>
+                                        <th>2ª Nota</th>
+                                        <th>3ª Nota</th>
+                                    </tr>
+                                </thead>
+                                <tbody>";
+                
+                        $disciplinas = ['portugues', 'matematica', 'ciencias_humanas', 'ciencias_exatas', 'educacao_fisica'];
+                        foreach ($disciplinas as $disciplina) {
+                            echo "<tr>
+                                    <td>" . ucfirst(str_replace('_', ' ', $disciplina)) . "</td>
+                                    <td>" . $notas[0][$disciplina] . "</td>
+                                    <td>" . $notas[1][$disciplina] . "</td>
+                                    <td>" . $notas[2][$disciplina] . "</td>
+                                </tr>";
+                        }
+                
+                        echo "</tbody>
+                            </table>";
                     }
 
                     echo "</tbody>

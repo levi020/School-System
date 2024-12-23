@@ -8,7 +8,7 @@ if($conn -> connect_error){
     $senha = hash("sha512", $conn->real_escape_string($_POST["senha"]));
     $cargo = $conn->real_escape_string($_POST["cargo"]);
     $escola = $conn->real_escape_string($_POST["escola"]);
-    $sql = "SELECT `user`,`cargo`, `image` FROM `funcionarios` WHERE `senha`='".$senha."' AND `user`='".$nome."' AND`cargo`='".$cargo."' AND `escola`='".$escola."' AND `ativo`='s'";
+    $sql = "SELECT `user`,`cargo`, `image`,`escola` FROM `funcionarios` WHERE `senha`='".$senha."' AND `user`='".$nome."' AND`cargo`='".$cargo."' AND `escola`='".$escola."' AND `ativo`='s'";
     $query = $conn->query($sql);
     try{
         if($query->num_rows == 0){
@@ -22,7 +22,8 @@ if($conn -> connect_error){
             $_SESSION["user"] = $row[0];
             $_SESSION["cargo"] = $row[1];
             $_SESSION["image"] = $row[2];
-
+            $_SESSION["escola"] = $row[3];
+            
             if($_SESSION["cargo"] == "Professor(a)"){
                 echo "<script>
                     alert('login bem-sucedido');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="..\images\iconSistema.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/iconSistema.jpg" type="image/x-icon">
     <title>Pagina Diretor(a)</title>
     <style>
         body{margin: 0;
@@ -52,7 +52,8 @@
             echo $_SESSION["user"]; 
         ?>
         </h1>
-        <img src="<?php echo $_SESSION["image"]; ?>" >
+        <img src="<?php $var = trim("..\ ".$_SESSION["image"]);
+        echo $var; ?>">
         <?php
             echo "<h5 class='date'>".date("d-m-Y")."</h5>";
         ?>

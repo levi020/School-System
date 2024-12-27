@@ -26,6 +26,11 @@
 </head>
 <body>
     <div>
+        <h1>Lista de funcionarios</h1>
+
+    </div>
+    <hr>
+    <div>
         <?php
             session_start(); // Certifique-se de iniciar a sessão
             include "../conn.php";
@@ -58,7 +63,7 @@
                             echo "<tr>
                                 <td>" . htmlspecialchars($row['user']) . "</td>
                                 <td>" . htmlspecialchars($row['cargo']) . "</td>
-                                <td><img src='" . htmlspecialchars($row['image']) . "' alt='Imagem do funcionário'></td>
+                                <td><img src='../".htmlspecialchars($row['image']) . "' alt='Imagem do funcionário'></td>
                                 <td>" . htmlspecialchars($row['escola']) . "</td>
                             </tr>";
                         }

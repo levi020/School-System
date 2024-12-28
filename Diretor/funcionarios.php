@@ -27,7 +27,7 @@
 <body>
     <div>
         <h1>Lista de funcionarios</h1>
-
+        <button><a href="addFuncionario.php">Adicionar funcionario</a></button>
     </div>
     <hr>
     <div>
@@ -38,8 +38,10 @@
             if ($conn->connect_error) {
                 echo "Erro de conexão com o servidor: " . $conn->connect_errno;
             } else {
-                $sql = "SELECT `user`, `cargo`, `image`, `escola` FROM `funcionarios` 
-                        WHERE `escola`='" . $_SESSION["escola"] . "' AND `ativo`='s'";
+
+                $sql = "SELECT `user`, `cargo`, `image`, `escola`,`id` FROM `funcionarios` 
+                WHERE `escola`='" . $_SESSION["escola"] . "' AND `ativo`='s' AND `cargo`!='Diretor(a)'";
+
                 try {
                     $query = $conn->query($sql);
                     if ($query->num_rows == 0) {
@@ -61,7 +63,11 @@
                         
                         while ($row = $query->fetch_assoc()) {
                             echo "<tr>
-                                <td>" . htmlspecialchars($row['user']) . "</td>
+                                <td> <form action='viewFuncionario.php' method='post'>
+                                    <input type='hidden' name='idFunc' id='idFunc' value='".$row["id"]."'>
+                                    <input type='submit' value='".$row["user"]."'>
+                                </form> 
+                                 </td>
                                 <td>" . htmlspecialchars($row['cargo']) . "</td>
                                 <td><img src='../".htmlspecialchars($row['image']) . "' alt='Imagem do funcionário'></td>
                                 <td>" . htmlspecialchars($row['escola']) . "</td>

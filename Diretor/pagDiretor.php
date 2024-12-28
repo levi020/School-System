@@ -24,12 +24,12 @@
 
         #p1{position: absolute;
         top: 15.5%;
-        left: 40%;
+        left: 39%;
         }
 
         #p2{position: absolute;
         top: 15.5%;
-        right: 37%;}
+        right: 37.5%;}
 
         .observacoes{width: 400px;
         text-align: center;
@@ -49,11 +49,17 @@
         <?php
             session_start();
             include "..\conn.php";
-            echo $_SESSION["user"]; 
+            if(empty($_SESSION["user"])){
+                header("location: ../index.php", true,301);
+            }else{
+                echo $_SESSION["user"];
+            }
         ?>
         </h1>
-        <img src="<?php $var = trim("..\ ".$_SESSION["image"]);
-        echo $var; ?>">
+        <?php
+        $var = "../" . $_SESSION["image"];
+        echo '<img src="' . htmlspecialchars(trim($var)) . '" alt="Imagem">'; 
+        ?>
         <?php
             echo "<h5 class='date'>".date("d-m-Y")."</h5>";
         ?>

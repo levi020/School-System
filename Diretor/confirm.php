@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Confirmação</title>
+    <link rel="shortcut icon" href="../images/iconSistema.jpg" type="image/x-icon">
 </head>
 <body>
     <div>
-        <h1>Para continuar, voce deve chamar o professor e pedir para ele inserir a senha dele.</h1>
+        <h1>Para continuar, voce deve chamar o <?php echo $_POST["cargoA"];?> e pedir para ele inserir a senha dele.</h1>
         <form action="updtFunc.php" method="post">
             <input type="hidden" name="id" id="id" value="<?php echo $_POST["idFunc"]; ?>">
             <input type="hidden" name="nomeNew" id="nomeNew" value="<?php echo $_POST["nome"]; ?>">

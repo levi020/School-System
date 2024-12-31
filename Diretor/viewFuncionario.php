@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Funcionários</title>
+    <link rel="shortcut icon" href="../images/iconSistema.jpg" type="image/x-icon">
     <style>
         .imgUpt{width: 25px;
         height: 25px;}
@@ -36,7 +37,7 @@
                         <img src='Load.png' class='imgUpt' onclick='Load()'>
 
                             <input type='hidden' name='idFunc' id='idFunc' value='".$id."'>
-
+                            <input type='hidden' name='cargoA' id='cargoA' value='".$row[3]."'>
                             <br>
                             <p id='nomeP'>Nome: $row[1]</p>
                             <input type='text' name='nome' id='nome' value='$row[1]'>
@@ -49,7 +50,7 @@
                             <select name='cargo' id='cargo' required>
                                 <option default>Selecione o Cargo</option>
                                 <option value='Professor(a)'>Professor(a)</option>
-                                <option value='Secretario(a)'>Secreário(a)</option>
+                                <option value='Secretario(a)'>Secretario(a)</option>
                                 <option value='Diretor(a)'>Diretor(a)</option>
                             </select>
 
@@ -66,7 +67,7 @@
                         </div>
                         <br>
                         <div>
-                        <form action='delFunc.php' method='post'>
+                        <form action='confirmExcluir.php' method='post'>
                             <input type='hidden' name='idFunc' id='idFunc' value='$row[0]'>
                             <input type='submit' value='Demitir'>
                         </form>

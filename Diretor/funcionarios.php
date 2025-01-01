@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funcionários</title>
     <link rel="shortcut icon" href="..\images\iconSistema.jpg" type="image/x-icon">
     <style>
+        body{margin: 0;
+        font-family: sans-serif;}
+
+        a{text-decoration: none;
+        color: black;}
+
+        #land{text-align: center;}
+
         table {
-            width: 100%;
+            width: 70%;
             border-collapse: collapse;
         }
+
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            text-align: center;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         img {
             max-width: 50px;
             height: auto;
@@ -25,12 +37,14 @@
     </style>
 </head>
 <body>
-    <div>
-        <h1>Lista de funcionarios</h1>
+    <div id="land">
+        <br>
+        <h1>Lista de Funcionarios</h1>
+        <br>
         <button><a href="addFuncionario.php">Adicionar funcionario</a></button>
     </div>
     <hr>
-    <div>
+    <div id="table">
         <?php
             session_start(); // Certifique-se de iniciar a sessão
             include "../conn.php";

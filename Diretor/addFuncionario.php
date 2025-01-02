@@ -19,10 +19,10 @@
         <br>
     </div>
     <div>
-        <form action="funcAdd.php" method="post">
+        <form action="funcAdd.php" method="post" enctype="multipart/form-data">
             <label for="file">Insira a foto do funcionário</label>
             <br>
-            <input type="file" name="file" id="file" required>
+            <input type="file" name="file" id="file" accept="image/*" required>
             <br>
             <label for="nomeFunc">Insira o nome do funcionário</label>
             <br>

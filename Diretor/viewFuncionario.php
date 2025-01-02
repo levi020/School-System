@@ -9,7 +9,9 @@
         .imgUpt{width: 25px;
         height: 25px;}
 
-        .foto{border-radius: 100%;}
+        .foto{border-radius: 100%;
+        width: 500px;
+        height: 300px;}
     </style>
 </head>
 <body>

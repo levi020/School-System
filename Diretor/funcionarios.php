@@ -31,8 +31,8 @@
         }
 
         img {
-            max-width: 50px;
-            height: auto;
+            max-width: 80px;
+            height: 50px;
         }
     </style>
 </head>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/12/2024 às 14:54
+-- Tempo de geração: 03/01/2025 às 00:37
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `escola` varchar(500) NOT NULL,
   `ativo` char(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `funcionarios`
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
 
 INSERT INTO `funcionarios` (`id`, `user`, `senha`, `cargo`, `image`, `escola`, `ativo`) VALUES
 (1, 'Levi', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 'Professor(a)', 'images\\itachi.jpg', 'E.E.B Júlia Miranda de Souza', 's'),
-(2, 'Kamila', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 'Diretor(a)', '..\\images\\sasuke.jpg', 'E.E.B Júlia Miranda de Souza', 's');
+(2, 'Kamila', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 'Diretor(a)', 'images\\sasuke.jpg', 'E.E.B Júlia Miranda de Souza', 's');
 
 -- --------------------------------------------------------
 

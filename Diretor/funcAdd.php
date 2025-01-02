@@ -20,7 +20,7 @@ if($conn->connect_error){
     $escola = $conn->real_escape_string($_POST["escola"]);
 
     $destino = "images/";
-    $pasta = "../images";
+    $pasta = "../images/";
 
     if (!is_dir($pasta)) {
        mkdir($pasta, 0777, true);
@@ -33,7 +33,10 @@ if($conn->connect_error){
         $caminhoImagemSalvar = $pasta . $nome;
         $caminhoSql = $destino . $nome;
         if (move_uploaded_file($_FILES['file']['tmp_name'], $caminhoImagemSalvar)) {
-            echo $caminhoSql;
+            if (!file_exists($caminhoImagemSalvar)) {
+                echo "Erro: o arquivo não foi movido para a pasta.";
+                exit;
+            }
             $sql = "INSERT INTO `funcionarios`(`user`, `senha`, `cargo`, `image`, `escola`, `ativo`) VALUES ('".$nomeFunc."','".$senha."','".$cargo."','".$caminhoSql."','".$escola."','s')";
             if($conn->query($sql)){
                 echo "<script>

@@ -61,7 +61,7 @@
                             <img src='lapis.png' class='imgUpt' onclick='MostrarInpEscola()' name='img3' id='img3'>
 
                             <select name='escola' id='escola'>
-                
+                                <option value='".$_SESSION["escola"]."'>".$_SESSION["escola"]."</option>
                             </select>
                             <br>
                             <input type='submit' value='Mudar' id='sub'>
@@ -130,40 +130,5 @@
         document.getElementById("cargoP").style.display = "block";
         document.getElementById("school").style.display = "block";
     }
-    
-    function Preencher(){
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../consulta.php', true); 
-
-        xhr.onload = function() {
-            if (xhr.status == 200) {
-                try {
-                    var escolas = JSON.parse(xhr.responseText); 
-                    var listaEscolas = document.getElementById('escola');
-                    listaEscolas.innerHTML = ''; 
-
-                    var optionDefault = document.createElement('option');
-                    optionDefault.value = '';
-                    optionDefault.textContent = 'Selecione a Escola';
-                    listaEscolas.appendChild(optionDefault);
-
-                    escolas.forEach(function(escola) {
-                        var option = document.createElement('option');
-                        option.value = escola; 
-                        option.textContent = escola;
-                        listaEscolas.appendChild(option);
-                    });
-                } catch (e) {
-                    alert('Erro ao processar as escolas: ' + e.message);
-                }
-            } else {
-                alert('Erro ao carregar as escolas: ' + xhr.status);
-            }
-        };
-
-        xhr.send();
-    }
-
-    Preencher();
 </script>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,6 @@
                 if ($query->num_rows > 0) {
                     echo "<table>";
                     echo "<tr>
-                            <th>ID</th>
                             <th>Número da Turma</th>
                             <th>Professor Responsável</th>
                             <th>Média da Turma</th>
@@ -59,8 +58,11 @@
                           </tr>";
                     while ($row = $query->fetch_assoc()) {
                         echo "<tr>
-                                <td>" . $row['id'] . "</td>
-                                <td>" . $row['numTurma'] . "</td>
+                                <td><form action='viewTurma.php' method='post'>
+                                    <input type='hidden' name='idTurma' id='idTurma' value='".$row["id"]."'>
+                                    <input type='submit' value='".$row["numTurma"]."'>
+                                </form>
+                                </td>
                                 <td>" . $row['profResponsavel'] . "</td>
                                 <td>" . $row['mediaTurma'] . "</td>
                                 <td>" . $row['escola'] . "</td>
@@ -75,6 +77,6 @@
             $conn->close();
         ?>  
     </div>
-    <form action='' method='post'></form>
+    
 </body>
 </html>

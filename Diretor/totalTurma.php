@@ -59,7 +59,7 @@
                     while ($row = $query->fetch_assoc()) {
                         echo "<tr>
                                 <td><form action='viewTurma.php' method='post'>
-                                    <input type='hidden' name='idTurma' id='idTurma' value='".$row["id"]."'>
+                                    <input type='hidden' name='idTurma' id='idTurma' value='".$row["numTurma"]."'>
                                     <input type='submit' value='".$row["numTurma"]."'>
                                 </form>
                                 </td>

@@ -14,9 +14,10 @@
             if($conn->connect_error){
                 echo "Server error: " . $conn->connect_errno;
             } else {
-                $idTurma = $conn->real_escape_string($_POST["idTurma"]);
+                $idTurma = $conn->real_escape_string($_POST["numTurma"]);
 
-                $sql = "";
+                $sql = "SELECT `id`, `image`, `nome`, `cpf`, `escola`, `turma`, `status` FROM `alunos` WHERE `turma`='".$idTurma."'";
+                $query = $conn->query($sql);
             }
             $conn->close();
         ?>

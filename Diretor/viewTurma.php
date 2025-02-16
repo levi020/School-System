@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turmas</title>
+    <link rel="shortcut icon" href="../images/iconSistema.jpg" type="image/x-icon">
     <style>
         body{
             margin: 0;
@@ -17,6 +18,9 @@
             color: black;
         }
 
+        button{background-color: black;
+
+        }
         #land{
             text-align: center;
         }
@@ -62,14 +66,18 @@
                         <th>Foto do aluno</th>
                         <th>Nome</th>
                         <th>CPF</th>
-                        <th>Turma</th>
                         </tr>
                     ";
                     while($row = mysqli_fetch_array($query)){
-                        echo "<td><img src='../".$row[1]."'></td>
+                        echo "<td>
+                            <form method='post' action='viewAluno.php'>
+                                <input type='hidden' id='id' name='id' value='$row[0]'>
+                                <button type='submit'><img src='../".$row[1]."'></button>
+                            </form>
+                        </td>
                         <td><h3>".$row[2]."</h3></td>
                         <td><h3>".$row[3]."</h3></td>
-                        <td><h3>".$row[5]."</h3></td>";
+                        ";
                         
                     }
                     echo "</table>";
